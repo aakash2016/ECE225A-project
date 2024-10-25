@@ -40,8 +40,5 @@ def simulate_casino(total_funds, wager_amount, total_plays):
         playnum.append(play)
         play += 1
 
-    # line plot of funds over time
-    # plt.plot(playnum, funds)
-
     # return the remaining fund
-    return funds[-1]
+    return playnum, funds, funds[-1]
