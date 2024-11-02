@@ -1,5 +1,3 @@
-# Save this file as `binomial_poisson_approximation.py` and run with `streamlit run binomial_poisson_approximation.py`
-
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
