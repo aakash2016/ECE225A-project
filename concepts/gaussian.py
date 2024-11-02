@@ -1,5 +1,3 @@
-# Save this file as `sum_of_gaussians.py` and run with `streamlit run sum_of_gaussians.py`
-
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
