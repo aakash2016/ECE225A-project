@@ -1,10 +1,14 @@
-def monte_hall_simulation():
-    import streamlit as st
-    import matplotlib.pyplot as plt
-    import sys
-    sys.path.append('../simulations')
-    from simulations.monte_hall import monty_hall_simulation
+import streamlit as st
+import matplotlib.pyplot as plt
+import seaborn as sns
 
+from simulations.monte_hall import monty_hall_simulation
+
+custom = {"axes.edgecolor": "red", "grid.linestyle": "dashed", "grid.color": "black"}
+sns.set_style("darkgrid", rc=custom)
+
+
+def monte_hall_simulation():
     st.title("Monty Hall Problem Simulator")
     st.write("""
         This simulator demonstrates the Monty Hall problem. 
@@ -38,5 +42,3 @@ def monte_hall_simulation():
         plt.title("Win Rate Over Time")
         plt.legend()
         st.pyplot(plt)
-
-    return
