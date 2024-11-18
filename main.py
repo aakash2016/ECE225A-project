@@ -1,9 +1,8 @@
 import streamlit as st
 from pages_.intro import intro
 from pages_.casino import casino_simulation
-from pages_.poker_sim import poker_simulation
 from pages_.monte_hall import monte_hall_simulation
-
+from pages_.poker_sim import poker_simulation
 
 page_names_to_funcs = {
     "—": intro,
