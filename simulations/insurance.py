@@ -3,7 +3,7 @@
 """
 
 import numpy as np
-import matplotlib.pyplot as plt
+
 
 def simulate_insurance(num_policies, num_years):
     """
@@ -17,22 +17,3 @@ def simulate_insurance(num_policies, num_years):
     claims = np.random.binomial(num_policies * num_years, 0.05) * 10000
     profit = premiums - claims
     return profit
-
-# Run simulation multiple times
-num_simulations = 100000
-results = [simulate_insurance(100, 1) for _ in range(num_simulations)]
-print(results)
-
-# Analyze results
-average_profit = np.mean(results)
-profit_probability = np.sum(np.array(results) > 0) / num_simulations
-
-print(f"Average annual profit: ${average_profit:.2f}")
-print(f"Probability of making a profit: {profit_probability:.2%}")
-
-# Plot histogram of results
-plt.hist(results, bins=50)
-plt.title("Distribution of Annual Profits")
-plt.xlabel("Profit ($)")
-plt.ylabel("Frequency")
-plt.show()
