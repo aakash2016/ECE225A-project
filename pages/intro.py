@@ -10,13 +10,13 @@ def intro():
 
     st.markdown(
         """
-        We aim to demonstrate key class concepts through interactive examples, making complex ideas easier to understand and interpret.
+        We aim to demonstrate key concepts discussed in the class through interactive examples, making complex ideas easier to understand and interpret.
 
         ### What will we cover?
+        - Monte Carlo Simulation
 
-        - Sum of Two Gaussians: Showing how the sum of two Gaussian distributions results in another Gaussian.
-        - Central Limit Theorem: Illustrating how this fundamental statistical principle works in practice.
-        - Poisson Distribution as a Special Case of Binomial Distribution: Demonstrating how the Poisson distribution emerges from the binomial distribution under certain conditions.
+
+
         
         ### Team members
 
