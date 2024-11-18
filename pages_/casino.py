@@ -1,10 +1,16 @@
-def casino_simulation():
-    import streamlit as st
-    import matplotlib.pyplot as plt
-    import sys
-    sys.path.append('../simulations')
-    from simulations.casino import simulate_casino
+# %
 
+import streamlit as st
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+custom = {"axes.edgecolor": "red", "grid.linestyle": "dashed", "grid.color": "black"}
+sns.set_style("darkgrid", rc=custom)
+
+from simulations.casino import simulate_casino
+
+
+def casino_simulation():
     st.title("The House Always Wins")
 
     form = st.form("MC Simulation Parameters")
@@ -32,5 +38,3 @@ def casino_simulation():
 
     st.pyplot(fig)
     st.write(f"the player starts the game with {total_funds} USD and ends with {int(sum(finalfund)/len(finalfund))} USD")
-
-    return

@@ -1,9 +1,12 @@
-def poker_simulation():
-    import streamlit as st
-    import random
-    import itertools
-    import matplotlib.pyplot as plt
+import random
+import streamlit as st
+import matplotlib.pyplot as plt
+import seaborn as sns
 
+custom = {"axes.edgecolor": "red", "grid.linestyle": "dashed", "grid.color": "black"}
+sns.set_style("darkgrid", rc=custom)
+
+def poker_simulation():
     def calculate_poker_probability(user_hand, num_opponents, num_simulations=1000):
         # Deck initialization
         suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
@@ -84,4 +87,3 @@ def poker_simulation():
         "2. Choose the number of opponents.\n"
         "3. Click the 'Calculate Probability' button to see your chances of winning!"
     )
-    return
