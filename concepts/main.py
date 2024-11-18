@@ -1,5 +1,5 @@
 import streamlit as st
-from intro import intro
+from pages.intro import intro
 from gaussian import plot_sum_gaussian
 from clt import plot_clt
 from binomial_to_poisson import plot_binomial_to_poisson
