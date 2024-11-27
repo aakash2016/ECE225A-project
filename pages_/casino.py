@@ -4,14 +4,20 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+from pages_.tag_style import get_tag_md
+from simulations.casino import simulate_casino
+
 custom = {"axes.edgecolor": "red", "grid.linestyle": "dashed", "grid.color": "black"}
 sns.set_style("darkgrid", rc=custom)
-
-from simulations.casino import simulate_casino
 
 
 def casino_simulation():
     st.title("The House Always Wins")
+
+    # add tags
+    get_tag_md(["probability", "casino"])
+    st.write("")
+    st.write("")
 
     form = st.form("MC Simulation Parameters")
     total_funds = form.slider(label='Total money in hand', min_value=500, max_value=20000, value=5000)

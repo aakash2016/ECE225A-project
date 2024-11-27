@@ -2,6 +2,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+from pages_.tag_style import get_tag_md
 from simulations.monte_hall import monty_hall_simulation
 
 custom = {"axes.edgecolor": "red", "grid.linestyle": "dashed", "grid.color": "black"}
@@ -10,6 +11,12 @@ sns.set_style("darkgrid", rc=custom)
 
 def monte_hall_simulation():
     st.title("Monty Hall Problem Simulator")
+
+    # add tags
+    get_tag_md(["conditional probability", "decision making"])
+    st.write("")
+    st.write("")
+
     st.write("""
         This simulator demonstrates the Monty Hall problem. 
         You can choose to "stick" with your initial choice or "switch" after the host opens a door to reveal a goat.
