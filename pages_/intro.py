@@ -1,7 +1,6 @@
 def intro():
     import streamlit as st
 
-
     st.markdown("<h1 style='text-align: center; color: black;'>Course Project 💻</h1>", unsafe_allow_html=True)
     # st.title("Course Project! :computer:")
     st.write("#### ECE 225: Probability and Statistics for Data Science! :chart_with_upwards_trend:")
