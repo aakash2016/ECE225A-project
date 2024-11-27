@@ -1,10 +1,11 @@
-import streamlit as st
 import numpy as np
+import streamlit as st
 
 import matplotlib.pyplot as plt
 import seaborn as sns
 
 from simulations.insurance import simulate_insurance
+from pages_.tag_style import get_tag_md
 
 custom = {"axes.edgecolor": "red", "grid.linestyle": "dashed", "grid.color": "black"}
 sns.set_style("darkgrid", rc=custom)
@@ -12,6 +13,11 @@ sns.set_style("darkgrid", rc=custom)
 
 def insurance_simulation():
     st.title("Underwriting Profits: The Hidden Dynamics of Insurance Success")
+
+    # add tags
+    get_tag_md(["binomial distribution", "profit"])
+    st.write("")
+    st.write("")
 
     # User inputs
     num_years = st.slider("Number of years", min_value=1, max_value=10, value=1)
