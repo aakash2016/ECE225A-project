@@ -19,6 +19,7 @@ def insurance_simulation():
     st.write("")
     st.markdown(
         """
+        <br/>
         <div style="background-color: #F9F9F9; padding: 15px; border-radius: 10px; border: 2px solid #3498DB;">
             <p style='font-size: 18px; color: #2C3E50;'>
                 Welcome to the <strong>Insurance Profit Simulator</strong>! 🏦 This interactive tool explores the hidden dynamics behind 
@@ -35,6 +36,7 @@ def insurance_simulation():
                 the insurance industry.
             </p>
         </div>
+        <br/>
         """,
         unsafe_allow_html=True,
     )
@@ -54,12 +56,14 @@ def insurance_simulation():
         profit_probability = np.sum(np.array(results) > 0) / num_simulations
 
         message = f"""
-                <div style="background-color: #94F9F3; padding: 15px; border-radius: 10px; border: 2px solid #2980B9;">
+                <br/>
+                <div style="background-color: #FBECF7; padding: 15px; border-radius: 10px; border: 2px solid #2980B9;">
                     <p style='font-size: 16px; color: #2C3E50;'>
                         Average annual profit: ${average_profit:.2f} <br>
                         Probability of making a profit: {profit_probability:.2%}
                     </p>
                 </div>
+                <br/>
             """
         # Render in Streamlit
         st.markdown(message, unsafe_allow_html=True)

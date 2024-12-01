@@ -4,15 +4,8 @@ def intro():
     # Title with styling
     st.markdown(
         """
-        <h1 style='text-align: center; color: #2E86C1;'>🚀 Course Project: Probability and Statistics for Data Science 📊</h1>
-        """,
-        unsafe_allow_html=True,
-    )
-
-    # Subtitle
-    st.markdown(
-        """
-        <h3 style='text-align: center; color: #34495E;'>ECE 225: Probability and Statistics for Data Science</h3>
+        <h1 style='text-align: center; color: #2E86C1;'>🚀 Course Project - ECE-225A - Probability & Statistics for Data Science 📊</h1>
+        <br/>
         """,
         unsafe_allow_html=True,
     )
@@ -26,6 +19,7 @@ def intro():
         We bring complex ideas to life through engaging simulations and interactive visualizations, designed to make learning <strong>fun</strong>, <strong>intuitive</strong>, and <strong>informative</strong>.
         </p>
         </div>
+        <br/>
         """,
         unsafe_allow_html=True,
     )
@@ -59,17 +53,18 @@ def intro():
         """
         ### 👨‍🎓 **Team Members**
         Meet the brilliant minds behind this project:
-        - **Rishabh Thapliyal** 🌟
-        - **Aakash Agarwal** 🚀
+        - **Rishabh Thapliyal**
+        - **Aakash Agrawal**
         """
     )
 
     # Closing Motivation
     st.markdown(
         """
-        <div style="background-color: #D6EAF8; padding: 15px; border-radius: 10px; border: 2px solid #2980B9;">
+        <br/>
+        <div style="background-color: #D6EAF8; padding: 15px; padding-left: 15px; padding-right: 15px; border-radius: 10px; border: 2px solid #2980B9; text-align: center; width: fit-content; margin: auto;">
         <p style='font-size: 16px; color: #2C3E50;'>
-        Let’s explore the world of <strong>Probability & Statistics</strong> together! 🚀
+            Let’s explore the world of <strong>Probability & Statistics</strong> together! 🚀
         </p>
         </div>
         """,
