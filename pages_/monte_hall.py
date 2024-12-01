@@ -15,12 +15,18 @@ def monte_hall_simulation():
     # add tags
     get_tag_md(["conditional probability", "decision making"])
     st.write("")
-    st.write("")
 
-    st.write("""
+    st.markdown(
+        """
+        <div style="background-color: #D6EAF8; padding: 15px; border-radius: 10px; border: 2px solid #2980B9;">
+        <p style='font-size: 16px; color: #2C3E50;'>
         This simulator demonstrates the Monty Hall problem. 
         You can choose to "stick" with your initial choice or "switch" after the host opens a door to reveal a goat.
-    """)
+        </p>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
     # User inputs
     num_trials = st.slider("Number of Trials", min_value=100, max_value=10000, step=100, value=1000)

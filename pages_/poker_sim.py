@@ -2,6 +2,7 @@ import random
 import streamlit as st
 import matplotlib.pyplot as plt
 import seaborn as sns
+from pages_.tag_style import get_tag_md
 
 import random
 from collections import Counter
@@ -113,7 +114,69 @@ def poker_simulation():
 
     # Streamlit app
     st.title("Poker Winning Probability Calculator")
+    get_tag_md(["Combinatorics","Poker hands","Probability of sequence"])
+
     st.sidebar.header("Select Your Options")
+    st.write("")
+    st.markdown(
+        """
+        <div style="background-color: #D6EAF8; padding: 15px; border-radius: 10px; border: 2px solid #2980B9;">
+            <p style="font-size: 16px; color: #2C3E50;">
+                Given a poker hand, total number of players, and simulations count, we calculate the probability of winning.  
+                <br> 
+                <strong>Methodology:</strong> Once the player selects the 5 cards, we randomly distribute the remaining cards among other players. 
+                We then score the players based on their card sequences.
+            </p>
+            <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+                <thead>
+                    <tr style="background-color: #2980B9; color: white; text-align: left;">
+                        <th style="padding: 8px; border: 1px solid #ddd;">Hand Rank</th>
+                        <th style="padding: 8px; border: 1px solid #ddd;">Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #ddd;">Straight Flush with Ace</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">9</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #ddd;">Straight Flush</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">8</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #ddd;">Four of a Kind</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">7</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #ddd;">Full House</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">6</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #ddd;">Flush</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">5</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #ddd;">Straight</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">4</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #ddd;">Three of a Kind</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">3</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #ddd;">Two Pair</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">2</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #ddd;">One Pair</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
     # User input: Card selection
     suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
@@ -147,15 +210,33 @@ def poker_simulation():
 
         st.write("### Probability of Winning")
         st.write(f"Your probability of winning is **{sum(win_probability_list)/len(win_probability_list):.2f}**")
-        st.write(f"For User hand: {user_hand}, User score is: {user_score[0]} and Name of the hand is: {user_score[1]}")
+        # st.write(f"For User hand: {user_hand}, User score is: {user_score[0]} and Name of the hand is: {user_score[1]}")
 
-        # Display results as a bar chart
+        message = f"""
+                <div style="background-color: #C5F7BF; padding: 15px; border-radius: 10px; border: 2px solid #2980B9;">
+                    <p style='font-size: 16px; color: #2C3E50;'>
+                        For User hand: {user_hand}, User score is: {user_score[0]} and Name of the hand is: {user_score[1]}
+                    </p>
+                </div>
+            """
+        # Render in Streamlit
+        st.markdown(message, unsafe_allow_html=True)
+
+        win_count = sum(win_probability_list)
+        lose_count = len(win_probability_list) - win_count
+
+        # Display results as a bar plot
         fig, ax = plt.subplots()
-        ax.plot(range(1,num_simulations+1), win_probability_list, label=f"Poker Simulation")
-        # ax.bar(["Win", "Lose"], [win_probability, 100 - win_probability], color=["green", "red"])
-        ax.set_ylabel("Probability")
-        ax.set_xlabel("Number of Simulations")
-        ax.set_title("Winning Probability Simulation for a selected hand")
+
+        # Create bar plot
+        ax.bar([0, 1], [lose_count, win_count], color=["red", "green"], tick_label=["Lose", "Win"])
+
+        # Add labels and title
+        ax.set_ylabel("Count")
+        ax.set_xlabel("Outcome")
+        ax.set_title("Count of Wins and Losses in Poker Simulation")
+
+        # Render the plot in Streamlit
         st.pyplot(fig)
 
     st.sidebar.write("### How to Use")

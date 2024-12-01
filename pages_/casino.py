@@ -17,8 +17,18 @@ def casino_simulation():
     # add tags
     get_tag_md(["probability", "casino"])
     st.write("")
-    st.write("")
 
+    st.markdown(
+        """
+        <div style="background-color: #D6EAF8; padding: 15px; border-radius: 10px; border: 2px solid #2980B9;">
+        <p style='font-size: 16px; color: #2C3E50;'>
+        We have simulated the casino gameplay. You select the amount of money in hand, the amount you want to bet, number of bets you want to place, and total games you want to play.
+        </p>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+    st.write("")
     form = st.form("MC Simulation Parameters")
     total_funds = form.slider(label='Total money in hand', min_value=500, max_value=20000, value=5000)
     wager_amount = form.slider(label='Enter the betting amount', min_value=500, max_value=total_funds, value=1000)
@@ -43,4 +53,13 @@ def casino_simulation():
         x += 1
 
     st.pyplot(fig)
-    st.write(f"the player starts the game with {total_funds} USD and ends with {int(sum(finalfund)/len(finalfund))} USD")
+    # st.write(f"the player starts the game with {total_funds} USD and ends with {int(sum(finalfund)/len(finalfund))} USD")
+    message = f"""
+        <div style="background-color: #FBF57B; padding: 15px; border-radius: 10px; border: 2px solid #2980B9;">
+            <p style='font-size: 16px; color: #2C3E50;'>
+                The player starts the game with {total_funds} USD and ends with {int(sum(finalfund)/len(finalfund))} USD.
+            </p>
+        </div>
+    """
+    # Render in Streamlit
+    st.markdown(message, unsafe_allow_html=True)
