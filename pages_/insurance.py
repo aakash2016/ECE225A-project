@@ -33,8 +33,16 @@ def insurance_simulation():
         average_profit = np.mean(results)
         profit_probability = np.sum(np.array(results) > 0) / num_simulations
 
-        st.write(f"Average annual profit: ${average_profit:.2f}")
-        st.write(f"Probability of making a profit: {profit_probability:.2%}")
+        message = f"""
+                <div style="background-color: #94F9F3; padding: 15px; border-radius: 10px; border: 2px solid #2980B9;">
+                    <p style='font-size: 16px; color: #2C3E50;'>
+                        Average annual profit: ${average_profit:.2f}
+                        Probability of making a profit: {profit_probability:.2%}
+                    </p>
+                </div>
+            """
+        # Render in Streamlit
+        st.markdown(message, unsafe_allow_html=True)
 
         # Plot histogram of results
         plt.hist(results, bins=50)
