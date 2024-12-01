@@ -20,14 +20,28 @@ def casino_simulation():
 
     st.markdown(
         """
-        <div style="background-color: #D6EAF8; padding: 15px; border-radius: 10px; border: 2px solid #2980B9;">
-        <p style='font-size: 16px; color: #2C3E50;'>
-        We have simulated the casino gameplay. You select the amount of money in hand, the amount you want to bet, number of bets you want to place, and total games you want to play.
-        </p>
+        <div style="background-color: #FAF3E0; padding: 15px; border-radius: 10px; border: 2px solid #C0392B;">
+            <p style='font-size: 18px; color: #2C3E50;'>  
+                Casinos operate on the foundation of <strong>probability theory</strong>, strategically designed to ensure their long-term 
+                advantage over players. In this simulation, we delve into the dynamics of gambling by allowing you to:
+                <ul>
+                    <li>Set your <strong>initial funds</strong>,</li>
+                    <li>Decide on your <strong>wager amounts</strong>,</li>
+                    <li>Control the <strong>number of bets</strong> and total games played.</li>
+                </ul>
+                Each bet is modeled as an independent trial with a fixed probability of winning, while the overall outcomes 
+                align with the <strong>law of large numbers</strong>—highlighting that over numerous plays, the expected returns favor 
+                the casino.  
+                By visualizing the progression of funds over time, you'll observe how small house advantages accumulate 
+                into substantial profits for the casino. This simulation not only provides insights into the mechanisms of 
+                gambling but also underscores why responsible gaming is crucial. Let's explore the mathematics and see 
+                why the house truly always wins! 💰
+            </p>
         </div>
         """,
         unsafe_allow_html=True,
     )
+
     st.write("")
     form = st.form("MC Simulation Parameters")
     total_funds = form.slider(label='Total money in hand', min_value=500, max_value=20000, value=5000)
