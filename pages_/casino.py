@@ -1,5 +1,5 @@
 # %
-
+import numpy as np
 import streamlit as st
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -20,8 +20,9 @@ def casino_simulation():
 
     st.markdown(
         """
+        <br/>
         <div style="background-color: #FAF3E0; padding: 15px; border-radius: 10px; border: 2px solid #C0392B;">
-            <p style='font-size: 18px; color: #2C3E50;'>  
+            <p style=color: #2C3E50;'>
                 Casinos operate on the foundation of <strong>probability theory</strong>, strategically designed to ensure their long-term 
                 advantage over players. In this simulation, we delve into the dynamics of gambling by allowing you to:
                 <ul>
@@ -38,6 +39,7 @@ def casino_simulation():
                 why the house truly always wins! 💰
             </p>
         </div>
+        <br/>
         """,
         unsafe_allow_html=True,
     )
@@ -52,7 +54,7 @@ def casino_simulation():
 
     # line plot of funds over time
     fig, ax = plt.subplots(figsize=(10, 6))
-    ax.set_xlabel("Total Plays")
+    ax.set_xlabel("Number of Bets / Play")
     ax.set_ylabel("Account Value")
     ax.set_title("Casino Simulation")
 
@@ -63,14 +65,16 @@ def casino_simulation():
         playnum, funds, remain_funds = simulate_casino(total_funds, wager_amount, num_bets)
         finalfund.append(remain_funds)
 
-        ax.plot(playnum, funds, label=f"Casino Simulation")
+        ax.plot(np.arange(1, num_bets+1), funds, label=f"Casino Simulation")
         x += 1
 
+    st.write("")
     st.pyplot(fig)
     # st.write(f"the player starts the game with {total_funds} USD and ends with {int(sum(finalfund)/len(finalfund))} USD")
     message = f"""
-        <div style="background-color: #FBF57B; padding: 15px; border-radius: 10px; border: 2px solid #2980B9;">
-            <p style='font-size: 16px; color: #2C3E50;'>
+        <br/>
+        <div style="background-color: #F8D7DA; padding: 15px; border-radius: 10px; border: 2px solid #C82333;">
+            <p style='font-size: 16px;'>
                 The player starts the game with {total_funds} USD and ends with {int(sum(finalfund)/len(finalfund))} USD.
             </p>
         </div>
