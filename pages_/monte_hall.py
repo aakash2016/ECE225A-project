@@ -18,6 +18,7 @@ def monte_hall_simulation():
 
     st.markdown(
         """
+        <br/>
         <div style="background-color: #D6EAF8; padding: 15px; border-radius: 10px; border: 2px solid #2980B9;">
             <p style='font-size: 14px; color: #2C3E50;'>
             The Monty Hall problem is a classic probability puzzle based on a game show. Imagine there are three doors:
@@ -42,6 +43,7 @@ def monte_hall_simulation():
             Observe how switching consistently gives you better odds over many iterations. 🎲✨
             </p>
         </div>
+        <br/>
         """,
         unsafe_allow_html=True,
     )
@@ -56,6 +58,7 @@ def monte_hall_simulation():
         win_percentage = (wins / num_trials) * 100
 
         # Display results
+        st.write("")
         st.write(f"**Trials:** {num_trials}")
         st.write(f"**Wins:** {wins}")
         st.write(f"**Win Percentage:** {win_percentage:.2f}%")

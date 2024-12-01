@@ -28,8 +28,16 @@ page_names_to_funcs_concepts = {
 }
 
 # Sidebar selection
-st.sidebar.title("✨ **Course Project: Probability & Statistics for Data Science** 📚")
+st.sidebar.markdown("<br><br>", unsafe_allow_html=True)  # Adds two line breaks for spacing
+st.sidebar.markdown("""
+    <div style="text-align: center;">
+        <h2><strong>Probability & Statistics <br/>for Data Science</strong></h2>
+    </div>
+""", unsafe_allow_html=True)
+
+st.sidebar.write("")
 category = st.sidebar.radio("🔍 **Choose a category**", ["🔬 Demo", "📚 Appendix"])
+st.sidebar.write("")
 
 if category == "🔬 Demo":
     demo_name = st.sidebar.selectbox("Choose a demo", page_names_to_funcs_demo.keys())
