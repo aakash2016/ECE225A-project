@@ -6,13 +6,11 @@ def plot_binomial_to_poisson():
 
     st.title("Binomial Distribution Approximating a Poisson Distribution")
 
-    st.write(r"""
-        As n becomes large and p becomes small such that (n.p) is constant, 
-        the binomial distribution \(\binom{n}{r}\) approximates a Poisson distribution with parameter lambda = n.p.
-        This simulator allows you to adjust the values of n and p and observe the approximation.
-        """)
-
-
+    st.markdown(r"""
+        As \(n\) becomes large and \(p\) becomes small such that \(n \cdot p\) is constant, 
+        the binomial distribution \( \binom{n}{r} \) approximates a Poisson distribution with parameter \(\lambda = n \cdot p\).
+        This simulator allows you to adjust the values of \(n\) and \(p\) and observe the approximation.
+    """)
 
     # Controls for the binomial parameters n and p
     n = st.slider("Number of trials (n)", min_value=10, max_value=1000, value=100, step=10)

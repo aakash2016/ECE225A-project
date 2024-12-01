@@ -64,6 +64,18 @@ def hospital_wait_time_simulation():
         st.pyplot(fig)
 
         # Display statistics
-        st.write(f"**Mean Wait Time:** {np.mean(wait_times):.2f} minutes")
-        st.write(f"**Standard Deviation of Wait Time:** {np.std(wait_times):.2f} minutes")
-        st.write(f"**Probability of waiting > 60 minutes:** {np.sum(wait_times > 60) / num_simulations:.2f}")
+        # st.write(f"**Mean Wait Time:** {np.mean(wait_times):.2f} minutes")
+        # st.write(f"**Standard Deviation of Wait Time:** {np.std(wait_times):.2f} minutes")
+        # st.write(f"**Probability of waiting > 60 minutes:** {np.sum(wait_times > 60) / num_simulations:.2f}")
+        message = f"""
+            <div style="background-color: #FBECF7; padding: 15px; border-radius: 10px; border: 2px solid #2980B9;">
+                <p style='font-size: 16px; color: #2C3E50;'>
+                    <b>Mean Wait Time:</b> {np.mean(wait_times):.2f} minutes<br>
+                    <b>Standard Deviation of Wait Time:</b> {np.std(wait_times):.2f} minutes<br>
+                    <b>Probability of waiting > 60 minutes:</b> {np.sum(wait_times > 60) / num_simulations:.2f}
+                </p>
+            </div>
+        """
+
+        # Render in Streamlit
+        st.markdown(message, unsafe_allow_html=True)
