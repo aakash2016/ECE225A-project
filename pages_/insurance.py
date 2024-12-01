@@ -17,7 +17,27 @@ def insurance_simulation():
     # add tags
     get_tag_md(["binomial distribution", "profit"])
     st.write("")
-    st.write("")
+    st.markdown(
+        """
+        <div style="background-color: #F9F9F9; padding: 15px; border-radius: 10px; border: 2px solid #3498DB;">
+            <p style='font-size: 18px; color: #2C3E50;'>
+                Welcome to the <strong>Insurance Profit Simulator</strong>! 🏦 This interactive tool explores the hidden dynamics behind 
+                underwriting profits, where mathematics and probability come together to drive success in the insurance 
+                industry. At its core, this simulation leverages concepts from the <strong>binomial distribution</strong> to model the 
+                outcomes of insurable events. By simulating we can estimate two key metrics:
+                <ul>
+                    <li>The <strong>average annual profit</strong>, offering insights into the company's performance.</li>
+                    <li>The <strong>probability of making a profit</strong>, providing a measure of risk and sustainability.</li>
+                </ul>
+                With this simulator, you can adjust variables such as the number of policies, years, and simulation runs to 
+                understand how small changes in assumptions impact the overall profitability. By analyzing the results, 
+                you'll gain a deeper appreciation of how probability-driven strategies influence real-world decisions in 
+                the insurance industry.
+            </p>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
     # User inputs
     num_years = st.slider("Number of years", min_value=1, max_value=10, value=1)
@@ -36,7 +56,7 @@ def insurance_simulation():
         message = f"""
                 <div style="background-color: #94F9F3; padding: 15px; border-radius: 10px; border: 2px solid #2980B9;">
                     <p style='font-size: 16px; color: #2C3E50;'>
-                        Average annual profit: ${average_profit:.2f}
+                        Average annual profit: ${average_profit:.2f} <br>
                         Probability of making a profit: {profit_probability:.2%}
                     </p>
                 </div>

@@ -19,10 +19,28 @@ def monte_hall_simulation():
     st.markdown(
         """
         <div style="background-color: #D6EAF8; padding: 15px; border-radius: 10px; border: 2px solid #2980B9;">
-        <p style='font-size: 16px; color: #2C3E50;'>
-        This simulator demonstrates the Monty Hall problem. 
-        You can choose to "stick" with your initial choice or "switch" after the host opens a door to reveal a goat.
-        </p>
+            <p style='font-size: 14px; color: #2C3E50;'>
+            The Monty Hall problem is a classic probability puzzle based on a game show. Imagine there are three doors:
+            - Behind one door is a <strong>car</strong> (the prize you want to win 🚗).
+            - Behind the other two doors are <strong>goats</strong> (not the prize 🐐).  
+            </p>
+            <p style='font-size: 14px; color: #2C3E50;'>
+            Here's how it works:
+            1. You make an initial choice by selecting one of the three doors. 🚪
+            2. The host, Monty Hall (who knows what's behind each door), opens another door, revealing a goat. 🐐
+            3. You now have two options: 
+                - <strong>Stick</strong> with your original choice.
+                - <strong>Switch</strong> to the other unopened door.  
+            </p>
+            <p style='font-size: 14px; color: #2C3E50;'>
+            <strong>🧠 The Probability Insight</strong>
+            - If you <strong>stick</strong> with your original choice, your probability of winning the car remains <strong>1/3</strong> (since you had a 1 in 3 chance initially).
+            - If you <strong>switch</strong>, your probability of winning becomes <strong>2/3</strong>. Why? When Monty opens a door to reveal a goat, he provides additional information, effectively doubling your odds of winning by switching!
+            </p>
+            <p style='font-size: 14px; color: #2C3E50;'>
+            This simulator lets you test these probabilities by simulating multiple rounds of the game. 
+            Observe how switching consistently gives you better odds over many iterations. 🎲✨
+            </p>
         </div>
         """,
         unsafe_allow_html=True,
