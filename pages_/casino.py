@@ -37,6 +37,9 @@ def casino_simulation():
                 into substantial profits for the casino. This simulation not only provides insights into the mechanisms of 
                 gambling but also underscores why responsible gaming is crucial. Let's explore the mathematics and see 
                 why the house truly always wins! 💰
+                </p>
+                <p>
+                <b>Intrinsically casino has setup probability of user winning to 0.49 by making the suitable configuration in their setup. In our case, we have made the dice biased.</b>
             </p>
         </div>
         <br/>
@@ -46,9 +49,10 @@ def casino_simulation():
 
     st.write("")
     form = st.form("MC Simulation Parameters")
-    total_funds = form.slider(label='Total money in hand', min_value=500, max_value=20000, value=5000)
-    wager_amount = form.slider(label='Enter the betting amount', min_value=500, max_value=total_funds, value=1000)
-    num_bets = form.slider(label='Number of bets', min_value=1, max_value=1000, value=100)
+    total_funds = form.slider(label='Total money in hand', min_value=10000, max_value=20000, value=12000)
+    wager_amount = form.slider(label='Enter the betting amount', min_value=100, max_value=total_funds, value=200)
+    num_bets = form.slider(label='Number of bets', min_value=100, max_value=1000, value=500)
+
     total_plays = form.slider(label='Total Plays', min_value=1, max_value=100, value=10)
     form.form_submit_button("submit")
 

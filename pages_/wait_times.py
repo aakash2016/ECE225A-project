@@ -24,7 +24,7 @@ def hospital_wait_time_simulation():
     # Interactive range slider for controlling both arrival_rate_min and arrival_rate_max
     arrival_rate = st.slider(
         "Select Arrival Rate Range (patients per minute)",
-        min_value=0.1, max_value=2.0, value=(0.2, 1.0), step=0.1,
+        min_value=1, max_value=20, value=(1, 10), step=1,
         format="%.1f"
     )
 
@@ -33,7 +33,7 @@ def hospital_wait_time_simulation():
 
     # Interactive sliders for other parameters
     num_patients = st.slider("Number of patients", min_value=100, max_value=1000, value=500, step=100)
-    service_rate = st.slider("Service rate (minutes per patient)", 0.1, 2.0, 0.7, 0.1)
+    service_rate = st.slider("Average Service rate (minutes per patient (1/ƛ) )", 0.1, 2.0, 0.7, 0.1)
     num_simulations = st.slider("Number of simulation runs", 100, 5000, 1000, 100)
 
     # Run simulation
