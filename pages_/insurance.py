@@ -43,7 +43,7 @@ def insurance_simulation():
 
     # User inputs
     num_years = st.slider("Number of years", min_value=1, max_value=10, value=1)
-    num_policies = st.slider("Number of Policies", min_value=10, max_value=500, step=10, value=100)
+    num_policies = st.slider("Number of Policies", min_value=1, max_value=30, step=1, value=5)
     num_simulations = st.slider("Number of Simulations", min_value=1000, max_value=50000, value=10000)
 
     # Run simulation
