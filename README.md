@@ -13,6 +13,8 @@
 1. Casino
 2. Monty Hall
 3. Poker
+4. Insurance
+5. Hospital Wait time
 
 ### Concepts
 1. Adding 2 normal distributions
