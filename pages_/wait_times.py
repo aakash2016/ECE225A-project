@@ -19,6 +19,21 @@ def hospital_wait_time_simulation():
     get_tag_md(["exponential distribution", "uniform distribution", "CLT"])
     st.write("")
     st.write("")
+    st.markdown(
+        """
+        <br/>
+        <div style="background-color: #F9F9F9; padding: 15px; border-radius: 10px; border: 2px solid #3498DB;">
+            <p style='font-size: 18px; color: #2C3E50;'>
+                Patient arrival time is distributed uniformly.
+                Average service rate (time between treating 2 patients) is distributed exponentially
+                with mean as 1/ƛ.
+                Average wait time for multiple simulations follow normal distribution.
+            </p>
+        </div>
+        <br/>
+        """,
+        unsafe_allow_html=True,
+    )
     st.write("")
 
     # Interactive range slider for controlling both arrival_rate_min and arrival_rate_max
@@ -72,10 +87,10 @@ def hospital_wait_time_simulation():
                 <p style='font-size: 16px; color: #2C3E50;'>
                     <b>Mean Wait Time:</b> {np.mean(wait_times):.2f} minutes<br>
                     <b>Standard Deviation of Wait Time:</b> {np.std(wait_times):.2f} minutes<br>
-                    <b>Probability of waiting > 60 minutes:</b> {np.sum(wait_times > 60) / num_simulations:.2f}
                 </p>
             </div>
         """
 
+        # <b>Probability of waiting > 60 minutes:</b> {np.sum(wait_times > 60) / num_simulations:.2f}
         # Render in Streamlit
         st.markdown(message, unsafe_allow_html=True)

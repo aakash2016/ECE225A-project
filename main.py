@@ -13,10 +13,10 @@ from concepts.binomial_to_poisson import plot_binomial_to_poisson
 # Mapping pages to functions
 page_names_to_funcs_demo = {
     "—": intro,
+"💡 Insurance": insurance_simulation,
+"⏳ Wait Times": hospital_wait_time_simulation,
     "🎰 Casino": casino_simulation,
     "🃏 Poker": poker_simulation,
-    "💡 Insurance": insurance_simulation,
-    "⏳ Wait Times": hospital_wait_time_simulation,
     "🎲 Monte Hall": monte_hall_simulation,
 }
 
