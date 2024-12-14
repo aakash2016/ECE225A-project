@@ -35,8 +35,7 @@ def mean_wait_time(num_patients, service_rate, arrival_rate_min, arrival_rate_ma
     # Compute wait times iteratively for each patient
     for i in range(1, num_patients):
         service_start_times[i] = max(arrival_times[i], service_start_times[i - 1] + service_times[i - 1])
-        wait_times[i] = service_
-        start_times[i] - arrival_times[i]
+        wait_times[i] = service_start_times[i] - arrival_times[i]
 
     # Return mean wait time
     return np.mean(wait_times)
